@@ -342,7 +342,7 @@ async function handleLogin() {
       const users = getStoredData(STORAGE_KEYS.users);
       const user = users.find((entry) => entry.email === email && entry.password === password);
       if (!user) {
-        showFormMessage('signInMessage', 'We could not find that account. Try the demo account ava@hoopsvault.test with password password123.', 'error');
+        showFormMessage('signInMessage', 'Unable to sign in. Please check your email and password and try again.', 'error');
         return;
       }
       setCurrentUser(user);
