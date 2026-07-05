@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell a Card | HoopsVault</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="create-listing">
+    <header class="topbar">
+      <a class="brand" href="index.html">HoopsVault</a>
+      <nav class="nav-links">
+        <a href="marketplace.html">Marketplace</a>
+        <a href="create-listing.html">Sell</a>
+        <a href="messages.html">Messages</a>
+      </nav>
+      <div class="nav-actions">
+        <span id="userBadge" class="user-badge"></span>
+        <a id="authLink" class="button small" href="login.html">Sign in</a>
+      </div>
+    </header>
+
+    <main class="form-section">
+      <div class="auth-grid">
+        <div class="auth-card">
+          <p class="eyebrow">For sellers</p>
+          <h2>List a card in minutes.</h2>
+          <p>Share grading, condition, and platform details so buyers can make confident decisions.</p>
+          <ul>
+            <li>Publish across your collector profile</li>
+            <li>Tag cards by grade and condition</li>
+            <li>Use buyer messaging to close deals quickly</li>
+          </ul>
+        </div>
+        <div class="form-card">
+          <div id="listingMessage" class="alert" style="display:none"></div>
+          <form id="listingForm" class="form-grid">
+            <label>
+              Card title
+              <input type="text" name="title" required />
+            </label>
+            <label>
+              Player
+              <input type="text" name="player" required />
+            </label>
+            <label>
+              Set / Parallel
+              <input type="text" name="set" required />
+            </label>
+            <label>
+              Category
+              <select name="category">
+                <option value="Vintage">Vintage</option>
+                <option value="Modern">Modern</option>
+                <option value="Collectors">Collectors</option>
+              </select>
+            </label>
+            <label>
+              Grade
+              <select name="grade">
+                <option value="PSA 10">PSA 10</option>
+                <option value="PSA 9">PSA 9</option>
+                <option value="CGC 8.5">CGC 8.5</option>
+                <option value="BGS 9">BGS 9</option>
+                <option value="Raw">Raw</option>
+              </select>
+            </label>
+            <label>
+              Condition
+              <select name="condition">
+                <option value="Near Mint">Near Mint</option>
+                <option value="Excellent">Excellent</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+              </select>
+            </label>
+            <label>
+              Price
+              <input type="number" name="price" min="1" required />
+            </label>
+            <label>
+              Platform source
+              <select name="platform">
+                <option value="eBay">eBay</option>
+                <option value="Facebook Marketplace">Facebook Marketplace</option>
+                <option value="Direct">Direct</option>
+              </select>
+            </label>
+            <label>
+              Description
+              <textarea name="description" rows="4" required></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="button primary" type="submit">Publish listing</button>
+              <a class="button secondary" href="marketplace.html">Browse listings</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 HoopsVault. Built for NBA collectors.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

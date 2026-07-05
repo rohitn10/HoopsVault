@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HoopsVault | NBA Trading Card Marketplace</title>
+    <meta
+      name="description"
+      content="Discover NBA trading cards, connect buyers and sellers from eBay and Facebook Marketplace, and manage every deal in one dynamic marketplace."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <header class="topbar">
+      <a class="brand" href="index.html">HoopsVault</a>
+      <nav class="nav-links">
+        <a href="marketplace.html">Marketplace</a>
+        <a href="create-listing.html">Sell</a>
+        <a href="messages.html">Messages</a>
+      </nav>
+      <div class="nav-actions">
+        <span id="userBadge" class="user-badge"></span>
+        <a id="authLink" class="button small" href="login.html">Sign in</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">NBA trading cards, reimagined</p>
+          <h1>Buy, sell, and discover NBA cards in one place.</h1>
+          <p class="hero-copy">
+            Collectors can browse verified listings, message sellers, and bring together cards from eBay and Facebook Marketplace without losing the speed of a focused NBA marketplace.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="marketplace.html">Explore listings</a>
+            <a class="button secondary" href="create-listing.html">List a card</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong id="listingCount">0</strong>
+              <span>active listings</span>
+            </div>
+            <div>
+              <strong id="sellerCount">0</strong>
+              <span>verified sellers</span>
+            </div>
+            <div>
+              <strong id="messageCount">0</strong>
+              <span>live conversations</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span class="badge">Featured rookie</span>
+            <span class="badge alt">PSA 9</span>
+          </div>
+          <div class="hero-card-visual">🏀</div>
+          <h3>LeBron James 2003 Topps Chrome</h3>
+          <p>High-gloss rookie card with premium centering and strong collector demand.</p>
+          <div class="hero-card-footer">
+            <span>$2,850</span>
+            <a href="marketplace.html">View listing</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <span>Secure buyer-seller messaging</span>
+        <span>Cross-platform discovery</span>
+        <span>Fast listing setup</span>
+        <span>Trusted collector profile</span>
+      </section>
+
+      <section class="feature-grid">
+        <article class="feature-card">
+          <h3>Built for NBA collectors</h3>
+          <p>From vintage legends to modern rookies, every listing is tailored for basketball card fans.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Bring platforms together</h3>
+          <p>Surface cards from eBay, Facebook Marketplace, and other channels in one usable experience.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Move from browse to deal</h3>
+          <p>Buyers can inquire instantly and sellers can respond from a real-time messaging flow.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 HoopsVault. Built for NBA collectors.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

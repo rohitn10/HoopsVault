@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages | HoopsVault</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="messages">
+    <header class="topbar">
+      <a class="brand" href="index.html">HoopsVault</a>
+      <nav class="nav-links">
+        <a href="marketplace.html">Marketplace</a>
+        <a href="create-listing.html">Sell</a>
+        <a href="messages.html">Messages</a>
+      </nav>
+      <div class="nav-actions">
+        <span id="userBadge" class="user-badge"></span>
+        <a id="authLink" class="button small" href="login.html">Sign in</a>
+      </div>
+    </header>
+
+    <main class="message-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Messages</p>
+          <h2>Stay connected with buyers and sellers.</h2>
+        </div>
+      </div>
+      <div id="messagesList"></div>
+    </main>
+
+    <footer>
+      <p>© 2026 HoopsVault. Built for NBA collectors.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listing | HoopsVault</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="listing">
+    <header class="topbar">
+      <a class="brand" href="index.html">HoopsVault</a>
+      <nav class="nav-links">
+        <a href="marketplace.html">Marketplace</a>
+        <a href="create-listing.html">Sell</a>
+        <a href="messages.html">Messages</a>
+      </nav>
+      <div class="nav-actions">
+        <span id="userBadge" class="user-badge"></span>
+        <a id="authLink" class="button small" href="login.html">Sign in</a>
+      </div>
+    </header>
+
+    <main class="market-section">
+      <div id="listingDetail"></div>
+      <div class="detail-layout" style="margin-top:1rem;">
+        <div class="form-card">
+          <h3>Message seller</h3>
+          <div id="messageStatus" class="alert" style="display:none"></div>
+          <form id="messageForm" class="form-grid">
+            <label>
+              Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="button primary" type="submit">Send message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 HoopsVault. Built for NBA collectors.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
