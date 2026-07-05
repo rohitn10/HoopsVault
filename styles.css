@@ -41,6 +41,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 2rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   gap: 1rem;
@@ -62,6 +63,14 @@ textarea {
   gap: 1rem;
   align-items: center;
   color: var(--muted);
+}
+
+.nav-links {
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  white-space: nowrap;
 }
 
 .user-badge {
@@ -448,6 +457,25 @@ footer {
 
   .topbar {
     flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    flex: 1 1 auto;
+    min-width: 110px;
+    text-align: center;
   }
 
   .section-heading {
