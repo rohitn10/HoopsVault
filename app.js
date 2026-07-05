@@ -529,45 +529,6 @@ async function renderMessages() {
   `;
 }
 
-function initMobileMenu() {
-  const header = document.querySelector('.topbar');
-  if (!header || header.querySelector('.nav-toggle')) return;
-
-  const toggle = document.createElement('button');
-  toggle.type = 'button';
-  toggle.className = 'nav-toggle';
-  toggle.setAttribute('aria-label', 'Toggle navigation menu');
-  toggle.innerHTML = '<span></span><span></span><span></span>';
-
-  const mobileMenu = document.createElement('div');
-  mobileMenu.className = 'mobile-menu';
-
-  const linkWrapper = document.createElement('div');
-  linkWrapper.className = 'mobile-menu-links';
-  const actionWrapper = document.createElement('div');
-  actionWrapper.className = 'mobile-menu-actions';
-
-  const navLinks = header.querySelector('.nav-links');
-  const navActions = header.querySelector('.nav-actions');
-
-  if (navLinks) {
-    linkWrapper.appendChild(navLinks.cloneNode(true));
-  }
-  if (navActions) {
-    actionWrapper.appendChild(navActions.cloneNode(true));
-  }
-
-  mobileMenu.appendChild(linkWrapper);
-  mobileMenu.appendChild(actionWrapper);
-  header.appendChild(toggle);
-  header.appendChild(mobileMenu);
-
-  toggle.addEventListener('click', () => {
-    const open = header.classList.toggle('mobile-menu-open');
-    toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
-  });
-}
-
 function initializePageHandlers() {
   if (document.body.dataset.page === 'home') {
     void renderHomeStats();
@@ -603,7 +564,6 @@ function initializeApp() {
   initSupabase();
   syncSupabaseSession();
   void updateAuthState();
-  initMobileMenu();
   initializePageHandlers();
 }
 
