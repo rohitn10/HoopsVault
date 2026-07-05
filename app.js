@@ -197,12 +197,17 @@ async function updateAuthState() {
   const currentUser = getCurrentUser();
   const userBadge = document.getElementById('userBadge');
   const authLink = document.getElementById('authLink');
+  const loginLink = document.getElementById('loginLink');
+  const signupLink = document.getElementById('signupLink');
   if (!userBadge || !authLink) return;
 
   if (currentUser) {
     userBadge.textContent = `Hi, ${currentUser.name}`;
     authLink.textContent = 'Log out';
     authLink.href = '#';
+    authLink.style.display = 'inline-flex';
+    if (loginLink) loginLink.style.display = 'none';
+    if (signupLink) signupLink.style.display = 'none';
     authLink.addEventListener('click', async (event) => {
       event.preventDefault();
       if (supabaseClient && currentMode === 'supabase') {
@@ -213,8 +218,9 @@ async function updateAuthState() {
     }, { once: true });
   } else {
     userBadge.textContent = '';
-    authLink.textContent = 'Sign in';
-    authLink.href = 'login.html';
+    authLink.style.display = 'none';
+    if (loginLink) loginLink.style.display = 'inline-flex';
+    if (signupLink) signupLink.style.display = 'inline-flex';
   }
 }
 
@@ -281,7 +287,7 @@ async function renderMarketplace() {
             </div>
             <div class="price-row">
               <strong>${formatPrice(listing.price)}</strong>
-              <a class="button small secondary" href="listing.html?id=${listing.id}">View</a>
+              <a class="button small secondary" href="/listing?id=${listing.id}">View</a>
             </div>
           </article>
         `
@@ -322,7 +328,7 @@ async function handleLogin() {
               email: data.user.email,
               role: 'seller'
             });
-            window.location.href = 'index.html';
+            window.location.href = '/';
             return;
           }
 
@@ -340,7 +346,7 @@ async function handleLogin() {
         return;
       }
       setCurrentUser(user);
-      window.location.href = 'index.html';
+      window.location.href = '/';
     };
   }
 
@@ -372,7 +378,7 @@ async function handleLogin() {
             users.push(newUser);
             saveStoredData(STORAGE_KEYS.users, users);
             setCurrentUser(newUser);
-            window.location.assign('index.html');
+            window.location.assign('/');
             return;
           }
 
@@ -387,7 +393,7 @@ async function handleLogin() {
       users.push(newUser);
       saveStoredData(STORAGE_KEYS.users, users);
       setCurrentUser(newUser);
-      window.location.assign('index.html');
+      window.location.assign('/');
     };
   }
 }
@@ -406,7 +412,7 @@ function handleListingCreation() {
 
   const currentUser = getCurrentUser();
   if (!currentUser) {
-    window.location.href = 'login.html';
+    window.location.href = '/login';
     return;
   }
 
@@ -471,7 +477,7 @@ async function renderListingDetail() {
   if (messageForm) {
     const currentUser = getCurrentUser();
     if (!currentUser) {
-      messageForm.innerHTML = '<p class="helper-text">Sign in to start a conversation with the seller.</p><a class="button small primary" href="login.html">Sign in</a>';
+      messageForm.innerHTML = '<p class="helper-text">Sign in to start a conversation with the seller.</p><a class="button small primary" href="/login">Sign in</a>';
       return;
     }
 

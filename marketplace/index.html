@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marketplace | HoopsVault</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body data-page="marketplace">
-    <header class="topbar">
-      <a class="brand" href="index.html">HoopsVault</a>
+        <header class="topbar sticky">
+      <a class="brand" href="/">HoopsVault</a>
       <nav class="nav-links">
-        <a href="marketplace.html">Marketplace</a>
-        <a href="create-listing.html">Sell</a>
-        <a href="messages.html">Messages</a>
+        <a href="/">Home</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/create-listing">Sell</a>
+        <a href="/messages">Messages</a>
       </nav>
       <div class="nav-actions">
         <span id="userBadge" class="user-badge"></span>
-        <a id="authLink" class="button small" href="login.html">Sign in</a>
+        <a id="loginLink" class="button small secondary" href="/login">Login</a>
+        <a id="signupLink" class="button small primary" href="/signup">Sign up</a>
+        <a id="authLink" class="button small secondary" href="/login">Sign in</a>
       </div>
     </header>
 
@@ -39,7 +42,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="config.js"></script>
-    <script src="app.js"></script>
+    <script src="/config.js"></script>
+    <script src="/app.js"></script>
   </body>
 </html>

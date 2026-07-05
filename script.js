@@ -118,7 +118,7 @@ function updateAuthState() {
   } else {
     userBadge.textContent = '';
     authLink.textContent = 'Sign in';
-    authLink.href = 'login.html';
+    authLink.href = '/login';
   }
 }
 
@@ -181,7 +181,7 @@ function renderMarketplace() {
             </div>
             <div class="price-row">
               <strong>${formatPrice(listing.price)}</strong>
-              <a class="button small secondary" href="listing.html?id=${listing.id}">View</a>
+              <a class="button small secondary" href="/listing?id=${listing.id}">View</a>
             </div>
           </article>
         `
@@ -218,7 +218,7 @@ function handleLogin() {
       }
 
       setCurrentUser(user);
-      window.location.href = 'index.html';
+      window.location.href = '/';
     });
   }
 
@@ -239,7 +239,7 @@ function handleLogin() {
       users.push(newUser);
       saveStoredData(STORAGE_KEYS.users, users);
       setCurrentUser(newUser);
-      window.location.href = 'index.html';
+      window.location.href = '/';
     });
   }
 }
@@ -257,7 +257,7 @@ function handleListingCreation() {
 
   const currentUser = getCurrentUser();
   if (!currentUser) {
-    window.location.href = 'login.html';
+    window.location.href = '/login';
     return;
   }
 
@@ -324,7 +324,7 @@ function renderListingDetail() {
   if (messageForm) {
     const currentUser = getCurrentUser();
     if (!currentUser) {
-      messageForm.innerHTML = '<p class="helper-text">Sign in to start a conversation with the seller.</p><a class="button small primary" href="login.html">Sign in</a>';
+      messageForm.innerHTML = '<p class="helper-text">Sign in to start a conversation with the seller.</p><a class="button small primary" href="/login">Sign in</a>';
       return;
     }
 

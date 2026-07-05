@@ -14,19 +14,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body data-page="home">
-    <header class="topbar">
-      <a class="brand" href="index.html">HoopsVault</a>
+        <header class="topbar sticky">
+      <a class="brand" href="/">HoopsVault</a>
       <nav class="nav-links">
-        <a href="marketplace.html">Marketplace</a>
-        <a href="create-listing.html">Sell</a>
-        <a href="messages.html">Messages</a>
+        <a href="/">Home</a>
+        <a href="/marketplace">Marketplace</a>
+        <a href="/create-listing">Sell</a>
+        <a href="/messages">Messages</a>
       </nav>
       <div class="nav-actions">
         <span id="userBadge" class="user-badge"></span>
-        <a id="authLink" class="button small" href="login.html">Sign in</a>
+        <a id="loginLink" class="button small secondary" href="/login">Login</a>
+        <a id="signupLink" class="button small primary" href="/signup">Sign up</a>
+        <a id="authLink" class="button small secondary" href="/login">Sign in</a>
       </div>
     </header>
 
@@ -39,8 +42,8 @@
             Collectors can browse verified listings, message sellers, and bring together cards from eBay and Facebook Marketplace without losing the speed of a focused NBA marketplace.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="marketplace.html">Explore listings</a>
-            <a class="button secondary" href="create-listing.html">List a card</a>
+            <a class="button primary" href="/marketplace">Explore listings</a>
+            <a class="button secondary" href="/create-listing">List a card</a>
           </div>
           <div class="hero-stats">
             <div>
@@ -67,7 +70,7 @@
           <p>High-gloss rookie card with premium centering and strong collector demand.</p>
           <div class="hero-card-footer">
             <span>$2,850</span>
-            <a href="marketplace.html">View listing</a>
+            <a href="/marketplace">View listing</a>
           </div>
         </div>
       </section>
@@ -100,7 +103,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="config.js"></script>
-    <script src="app.js"></script>
+    <script src="/config.js"></script>
+    <script src="/app.js"></script>
   </body>
 </html>
